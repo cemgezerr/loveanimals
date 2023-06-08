@@ -1,3 +1,4 @@
+import appCss from './App.css'
 import { useState } from 'react';
 import AnimalShow from './AnimalShow';
 
@@ -18,9 +19,9 @@ function App(){
     return <AnimalShow type={hayvanlar} key={index} />;
     });
 
-    return  <div>
+    return  <div className='app'>
                 <button onClick={butonaTikla}>Hayvan Ekle</button>
-                <div>{renderedHayvanlar}</div>
+                <div className='animal-list '>{renderedHayvanlar}</div>
               
             </div>
 }
