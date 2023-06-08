@@ -1,4 +1,4 @@
-function AnimalShow(){
-    return <div>Cow!</div>
+function AnimalShow({type}){
+    return <div>{type}</div>
 };
 export default AnimalShow;

@@ -1,16 +1,23 @@
-import { useState } from "react";
+import { useState } from 'react';
+
+function hayvanlarıGetir(){
+    const hayvanlar = ['bird', 'cat', 'cow' , 'dog' , 'gator' ,'horse'];
+
+    return hayvanlar[Math.floor(Math.random() * hayvanlar.length)];
+}
 
 function App(){
-    const [count , setCount] = useState(0);
-
+    const [hayvanlar,setHayvanlar] = useState([]);
 
     const butonaTikla = () => {
-        setCount(count+1);
+        
+      setHayvanlar([...hayvanlar, hayvanlarıGetir()])
     };
 
     return  <div>
                 <button onClick={butonaTikla}>Hayvan Ekle</button>
-                <div>Hayvan sayısı: {count}</div>
+                <div>{hayvanlar}</div>
+              
             </div>
 }
 
