@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import AnimalShow from './AnimalShow';
 
 function hayvanlarıGetir(){
     const hayvanlar = ['bird', 'cat', 'cow' , 'dog' , 'gator' ,'horse'];
@@ -13,10 +14,13 @@ function App(){
         
       setHayvanlar([...hayvanlar, hayvanlarıGetir()])
     };
+    const renderedHayvanlar = hayvanlar.map((hayvanlar,index) =>{
+    return <AnimalShow type={hayvanlar} key={index} />;
+    });
 
     return  <div>
                 <button onClick={butonaTikla}>Hayvan Ekle</button>
-                <div>{hayvanlar}</div>
+                <div>{renderedHayvanlar}</div>
               
             </div>
 }
